@@ -17,6 +17,9 @@ public class ColumnPool : MonoBehaviour
 
 	private float timeSinceLastSpawned;
 
+    //게임 컨트롤 오브젝트
+    public GameControlNew gameControl;
+
 
 	void Start()
 	{
@@ -38,7 +41,7 @@ public class ColumnPool : MonoBehaviour
 	{
 		timeSinceLastSpawned += Time.deltaTime;
 
-		if (GameControl.instance.gameOver == false && timeSinceLastSpawned >= spawnRate) 
+		if (gameControl.gameOver == false && timeSinceLastSpawned >= spawnRate) 
 		{	
 			timeSinceLastSpawned = 0f;
 

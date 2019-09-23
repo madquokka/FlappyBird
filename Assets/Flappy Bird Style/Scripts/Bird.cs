@@ -7,7 +7,9 @@ public class Bird : MonoBehaviour
 	private bool isDead = false;			//Has the player collided with a wall?
 
 	private Animator anim;					//Reference to the Animator component.
-	private Rigidbody2D rb2d;				//Holds a reference to the Rigidbody2D component of the bird.
+	private Rigidbody2D rb2d;               //Holds a reference to the Rigidbody2D component of the bird.
+
+    public GameControlNew gameControl;
 
 	void Start()
 	{
@@ -44,7 +46,10 @@ public class Bird : MonoBehaviour
 		isDead = true;
 		//...tell the Animator about it...
 		anim.SetTrigger ("Die");
-		//...and tell the game control about it.
-		GameControl.instance.BirdDied ();
+        //...and tell the game control about it.
+        //GameControl.instance.BirdDied ();
+
+        //게임컨트롤의 BirdDied 함수를 호출한다.
+        gameControl.BirdDied();
 	}
 }
